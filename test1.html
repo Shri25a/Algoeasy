@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/index.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni&display=swap" rel="stylesheet"> 
+<link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="test.css">
+
+    <title>BubbleSort</title>
+    <script src="radisort.js"></script>
+  </head>
+  <body style="background:linear-gradient(to right,#ebe8e8,#b6e7cf) ">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">Navbar</a>
+    
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="Home.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutusfinal(usethis).html">aboutus</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="Sorts.html">Sort</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="Mcqss.html">MCQ</a>
+          </li>
+        </ul>
+        </div>
+    </nav>
+      </div>
+      <div class="outer">
+        <div class="left">
+          <div class="data">
+            <h1>RADIX SORT</h1>
+            <p>Radix sort is the linear sorting algorithm that is used for integers. In Radix sort, there is digit by digit sorting is performed that is started from the least significant digit to the most significant digit.<br></p><br>
+            <h2>Working of Radix sort</h2><br><br>
+            <p>•	The Radix sort algorithm works by ordering each digit from least significant to most significant. <br>
+              •	In base 10, radix sort would sort by the digits in the one's place, then the ten's place, and so on.<br>
+              •	To sort the values in each digit place, Radix sort employs counting sort as a subroutine.<br>
+              •	This means that for a three-digit number in base 10, counting sort will be used to sort the 1st, 10th, and 100th places, resulting in a completely sorted list. Here's a rundown of the counting sort algorithm.<br><br>
+              Assume you have an 8-element array. First, you will sort the elements by the value of the unit place. It will then sort the elements based on the value of the tenth position. This process is repeated until it reaches the last significant location.<br><br>
+              Let's start with [132, 543, 783, 63, 7, 49, 898]. It is sorted using radix sort, as illustrated in the figure below.<br>
+              •	Find the array's largest element, i.e., maximum. Consider A to be the number of digits in maximum. A is calculated because we must traverse all of the significant locations of all elements.<br><br>
+              The largest number in this array [132, 543, 783, 63, 7, 49, 898] is 898. It has three digits. As a result, the loop should be extended to hundreds of places (3 times).<br><br>
+              •	Now, go through each significant location one by one. Sort the digits at each significant place with any stable sorting technique. You must use counting sort for this. Sort the elements using the unit place digits (A = 0).<br>
+              </p>
+              <img src="/shri/radixsort1.jpg" width="80%" ><br><br>
+              <p> Sort the elements now by digits in the tens place</p><br>
+              <img src="/shri/radixsort2.jpg"width="80%"><br>
+              <p>, sort the elements by digits in the hundreds place.</p><br>
+              <img src="/shri/radixsort3.jpg" width="80%"><br>
+              <h2>Time complexity</h2><br><br>
+              <p>Worst-Case Time Complexity<br>
+                In radix sort, the worst case is when all elements have the same number of digits except one, which has a significantly large number of digits. If the number of digits in the largest element equals n, the runtime is O. (n2).<br><br>
+                Best Case Time Complexity<br><br>
+                When all elements have the same number of digits, the best-case scenario occurs. O(a(n+b)) is the best-case time complexity. If b equals O(n), the time complexity is O. (a*n).<br>
+                Average Case Time Complexity<br><br>
+                You considered the distribution of the number of digits in the average case. There are 'p' passes, and each digit can have up to 'd' different values. Because radix sort is independent of the input sequence, we can keep n constant.<br>
+                T(n) = p(n+d) is the running time of radix sort. Using the linearity of expectation and taking into account both sides' expectations.<br>
+                Radix sort has an average case time complexity of O(p*(n+d)).
+                </p>
+              
+              <h2>Application of radix sort</h2><br><br>
+              <p>These are some applications of radix sort:<br>
+                •	The Radix sort algorithm is used in a typical computer, a sequential random-access machine, multiple fields key records.<br>
+                •	While creating a suffix array, use the DC3 algorithm (Kärkkäinen-Sanders-Burkhardt).<br>
+                •	The Radix sort algorithm locates locations where there are numbers in extensive ranges.<br>
+                </p>
+          
+              </div></div>
+        <div class="right">
+          <div class="calculate">
+            
+            <div id="form">
+              <p style="font-size: 1.5rem;">RADIX SORT</p>
+              <p style="font-size: 1rem;">Enter the numbers below</p>
+              
+              <input type="text"id="inputarr"><br><br>
+        
+              <button onclick="Radixsort()" >sort</button>
+            </div>
+        <div id="demo1"></div>
+            </div>
+      </div>
+            
+          </div>
+        </div>
+      </div>
+      <footer style="background-color: #313332;">
+        <div class="container" >
+          <div class="sec aboutus" >
+            <h2>About Us</h2>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
+              explicabo quaerat sit voluptatibus rerum soluta assumenda,
+              voluptates.
+            </p>
+            <ul class="sci">
+              <li>
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="sec quickLinks">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">How-To-Use</a></li>
+              <li><a href="#">Sign In</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="sec contact">
+            <h2>Contact Us</h2>
+            <ul class="info">
+              <li>
+                <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                <span>Survey No. 27</span>
+              </li>
+              <li>
+                <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                <p><a href="tel:123456789">+91 1234567890</a></p>
+              </li>
+              <li>
+                <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                <p>
+                  <a href="mailto:agrisenseinfo@gmail.com"
+                    >algoeasyinfo@gmail.com</a
+                  >
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+      </footer>
+    
+    </body>
+</html>

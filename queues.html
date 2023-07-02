@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/index.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+   
+    <link rel="stylesheet" href="queues.css">
+    <title>Queues </title>
+</head>
+
+<body class="body">
+
+    <header>
+        <div class="logo">AlgoEasy</div>
+        <nav class="active">
+            <ul>
+                <li><a href="Home.html" class="active">Home</a></li>
+          <li><a href="aboutusfinal(usethis).html">About Us</a></li>
+          
+          <li><a href="login.html">Sign In</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".menu-toggle").click(function () {
+                $("nav").toggleClass("active");
+            });
+        });
+    </script>
+    <br><br><br>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">⬆️</button>
+    <script>
+        mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        } 
+    </script>
+    <br><br><br><br><br><br><br><br>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="sort.html">SORT</a></li>
+            
+            <li><a href="stack.html">STACK</a></li>
+            <li><a href="queues.html">QUEUES</a></li>
+            
+        </ul>
+    </div>
+    </nav>
+    
+    <div class="scrollbg">
+        
+        <div class="scrolldiv">
+            
+            <div class="scrollobj"><br>
+                
+                <p>A Queue is a linear structure which follows a particular order in which the operations are performed.
+                    The order is First In First Out (FIFO). A good example of a queue is any queue of consumers for a
+                    resource where the consumer that came first is served first. The difference between stacks and
+                    queues is in removing. In a stack we remove the item the most recently added; in a queue, we remove
+                    the item the least recently added</p>
+                <img class="queueimg" src="static/images/Queue.png"><br>
+                <h2>Types of Queues</h2><br><br>
+                <p class="queues">
+                    1. Simple Queue<br> <br>
+                    2. Circular Queue <br> <br>
+                    3. Doubly Ended Queue <br> <br>
+                    4. Priority Queue <br> <br>
+
+                </p><br>
+                <h2>Basic operations of queue</h2><br><br>
+                <p>
+                    1-enqueue() − add (store) an item to the queue. <br>
+
+                    2- dequeue() − remove (access) an item from the queue. <br>
+
+                    Few more functions are required to make the above-mentioned queue operation efficient. These are −
+                    <br>
+
+                    3- peek() − Gets the element at the front of the queue without removing it<br>
+
+                    4- isfull() − Checks if the queue is full. <br>
+
+                    4-isempty() − Checks if the queue is empty <br>
+                </p>
+                <br> <br>
+                <p>
+                    <p><span class="algo">A] peek()</span></p> 
+                    <br>
+                    This function helps to see the data at the front of the queue. The algorithm of peek() function is
+                    as follows − 
+
+                    <br> <br>
+                <p><span class="algo">Algorithm</span></p> <br> <br>
+                <p class="algorithms"> 1-begin procedure peek <br>
+                    2- return queue[front] <br>
+                    3- end procedure <br></p>
+                </p>
+                <br> <br>
+                <p>
+                    
+                        <p><span class="algo">B] isfull()</span></p>
+                     <br> 
+                    As we are using single dimension array to implement queue, we just check for the rear pointer to
+                    reach at MAXSIZE to determine that the queue is full. In case we maintain the queue in a circular
+                    linked-list, the algorithm will differ. Algorithm of isfull() function −
+
+                <p><span class="algo">Algorithm</span></p> <br> <br>
+                <p class="algorithms">
+                    1- begin procedure isfull <br>
+                    2- if rear equals to MAXSIZE <br>
+                    3- return true <br>
+                    4- else <br>
+                    5- return false <br>
+                    6- endif <br>
+                    7-end procedure <br>
+                    <br>
+                </p>
+
+                </p>
+                <br> <br>
+                <p>
+                    
+                    <p><span class="algo">C] isEmpty</span></p> 
+                    <br>
+                    Algorithm of isempty() function −
+
+                <p><span class="algo">Algorithm</span></p> <br> <br>
+                <p class="algorithms">
+                    1-begin procedure isempty <br>
+                    2-if front is less than MIN OR front is greater than rear <br>
+                    3-return true <br>
+                    4-else <br>
+                    5-return false <br>
+                    6-endif <br>
+                    7-end procedure <br>
+                </p>
+
+
+                </p>
+                <br><br><br>
+                <p class="enqueue">
+                <p><span class="algo">D] Enqueue Operation</span></p> <br> <br>
+                <p>
+                    Queues maintain two data pointers, front and rear. Therefore, its operations are comparatively
+                    difficult to implement than that of stacks.
+                    <br>
+                    The following steps should be taken to enqueue (insert) data into a queue − <br>
+
+                    Step 1 − Check if the queue is full. <br>
+
+                    Step 2 − If the queue is full, produce overflow error and exit. <br>
+
+                    Step 3 − If the queue is not full, increment rear pointer to point the next empty space. <br>
+
+                    Step 4 − Add data element to the queue location, where the rear is pointing. <br>
+
+                    Step 5 − return success. <br>
+                    <img class="queueimg" src="./queue_enqueue_diagram.jpg" alt="">
+                <p><span class="algo">Algorithm</span></p> <br> <br>
+                <p>
+                <p class="algorithms">
+                    procedure enqueue(data)
+                    <br>
+                    1-if queue is full <br>
+                    2-return overflow <br>
+                    3-endif <br>
+                    4-rear ← rear + 1 <br>
+                    5-queue[rear] ← data <br>
+                    6-return true <br>
+                    7-end procedure <br>
+                </p>
+
+                </p>
+
+                </p>
+                </p>
+                <br> <br>
+                <p class="dequeue">
+                <p><span class="algo">E] Dequeue Operation</span></p> <br> <br>
+                <p>
+                    Accessing data from the queue is a process of two tasks − access the data where front is pointing
+                    and remove the data after access. The following steps are taken to perform dequeue operation − <br>
+
+                    Step 1 − Check if the queue is empty. <br>
+
+                    Step 2 − If the queue is empty, produce underflow error and exit. <br>
+
+                    Step 3 − If the queue is not empty, access the data where front is pointing. <br>
+
+                    Step 4 − Increment front pointer to point to the next available data element. <br>
+
+                    Step 5 − Return success. <br>
+
+
+                    <img class="queueimg" src="./queue_dequeue_diagram.jpg" alt="">
+                <p><span class="algo">Algorithm</span></p> <br> <br>
+                <p>
+                <p class="algorithms">
+                    1-procedure dequeue  <br>
+                    2-if queue is empty <br>
+                    3-return underflow <br>
+                    4-end if <br>
+                    5-data = queue[front] <br>
+                    6-front ← front + 1 <br>
+                    7-return true <br>
+                    8-end procedure <br>
+                </p>
+
+                </p>
+
+                </p>
+                </p>
+                <br>
+                <h4 style="color: red;">Video for the reference:</h4>
+                <br>
+                <center>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/UbAEP7P0vfk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                </center>
+            </div>
+        </div>
+    </div>
+</body>

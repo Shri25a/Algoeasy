@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/index.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni&display=swap" rel="stylesheet"> 
+<link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="test.css">
+
+    <title>BubbleSort</title>
+    <script src="countsort.js"></script>
+  </head>
+  <body style="background:linear-gradient(to right,#ebe8e8,#b6e7cf) ">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top ">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+    
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03"style="background-color: rgb(183, 242, 205);">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="Home.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Sorts.html">Sort</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="stack.html">Stacks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="stack.html">linked list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="stack.html">Graphs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="stack.html">Tree</a>
+          </li>
+        </ul>
+        
+      </div>
+    </nav>
+      </div>
+      <div class="outer">
+        <div class="left">
+          <div class="data">
+            <h1>COUNT SORT</h1>
+            <p> is a sorting technique based on keys between a specific range. It works by counting the number of objects having distinct key values (kind of hashing). Then doing some arithmetic to calculate the position of each object in the output sequence.<br></p>
+            <h2>Working of Count sort</h2><br><br>
+            <p>For simplicity, consider the data in the range 0 to 9. <br>
+              Input data: 1, 4, 1, 2, 7, 5, 2<br><br>
+                1) Take a count array to store the count of each unique object.<br>
+                Index:     0  1  2  3  4  5  6  7  8  9<br>
+                Count:     0  2  2  0   1  1  0  1  0  0<br><br>
+              
+                2) Modify the count array such that each element at each index
+                stores the sum of previous counts. <br>
+                Index:     0  1  2  3  4  5  6  7  8  9<br>
+                Count:     0  2  4  4  5  6  6  7  7  7<br><br>
+              
+              The modified count array indicates the position of each object in 
+              the output sequence.<br><br>
+              
+                3) Rotate the array clockwise for one time.<br><br>
+                 Index:     0 1 2 3 4 5 6 7 8 9<br>
+                 Count:     0 0 2 4 4 5 6 6 7 7<br><br>
+                
+                4) Output each object from the input sequence followed by 
+                increasing its count by 1.<br>
+                Process the input data: 1, 4, 1, 2, 7, 5, 2. Position of 1 is 0.
+                Put data 1 at index 0 in output. Increase co unt by 1 to place 
+                next data 1 at an index 1 greater than this index.</p><br>
+                <img src="/shri/countsort.jpg" style="width: 100%;">
+                <h2>Algorithm</h2><br><br>
+                <p>Counting_Sort( array, ele ) // ele is number of elements in the array<br><br>
+
+                  max <- discover the array's biggest element<br>
+                  
+                  Create a count array of maximum + 1 size and fill it with all 0s.<br>
+                  
+                  for i = 0 to ele<br>
+                  
+                  discover the total number of occurrences of each element and save the count in the count array at the index.<br>
+                  
+                  for i = 0 to max<br>
+                  
+                  Add the current(i) and previous(i-1) counts to get the cumulative sum, which you may save in the count array.<br>
+                  
+                  For j = ele down to 1<br>
+                  
+                  Decrement the count of each element copied by one before copying it back into the input array.<br></p><br>
+                  <h2>Time complexity</h2><br><br>
+                  <p>O(n+k) where n is the number of elements in input array and k is the range of input. <br></p>
+                <video src="/shri/count sort.mp4" controls></video>
+              </div></div>
+        <div class="right">
+          <div class="calculate">
+            
+            <div id="form">
+              <p style="font-size: 1.5rem;">COUNT SORT</p>
+              <p style="font-size: 1rem;">Enter the numbers below</p>
+              
+              <input type="text"id="inputarr"><br><br>
+        
+              <button onclick="CountSort()" >sort</button>
+            </div>
+        <div id="demo1"></div>
+            </div>
+      </div>
+            
+          </div>
+        </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <footer style="background-color: #313332;">
+        <div class="container" >
+          <div class="sec aboutus" >
+            <h2>About Us</h2>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
+              explicabo quaerat sit voluptatibus rerum soluta assumenda,
+              voluptates.
+            </p>
+            <ul class="sci">
+              <li>
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="sec quickLinks">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="#">Home</a></li>
+            
+            </ul>
+          </div>
+          <div class="sec contact">
+            <h2>Contact Us</h2>
+            <ul class="info">
+              <li>
+                <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                <span>Survey No. 27</span>
+              </li>
+              <li>
+                <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                <p><a href="tel:123456789">+91 1234567890</a></p>
+              </li>
+              <li>
+                <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                <p>
+                  <a href="mailto:agrisenseinfo@gmail.com"
+                    >algoeasyinfo@gmail.com</a
+                  >
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+      </footer>
+    
+    </body>
+</html>

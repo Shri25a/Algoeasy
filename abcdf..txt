@@ -1,0 +1,8 @@
+<h1 style="color: rgb(39, 18, 59);">SORTING??</h1><br>
+      <p style="color:rgb(38, 26, 62);padding:2%;border-color: blue;">        Sorting is a process of ordering or placing a list of elements from a collection in some kind of order. It is nothing but storage of data in sorted order. Sorting can be done in ascending and descending order. It arranges the data in a sequence which makes searching easier.</p><br>
+      <h1 style="color: rgb(39, 18, 59);">COMPARISON BASED SORTING</h1><br>
+      <p style="color:rgb(38, 26, 62);padding:2%;border-color: blue;">In comparison based sorting, elements of an array are compared with each other to find the sorted array. e.g:Bubble sort
+                 selection sort
+                merge sort
+                heap sort
+                quick sort</p><br></div>

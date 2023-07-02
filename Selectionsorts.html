@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/index.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni&display=swap" rel="stylesheet"> 
+<link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="static/index.css">
+
+    <title>BubbleSort</title>
+    <script src="bubblesort.js"></script>
+  </head>
+  <body style="background:linear-gradient(to right,#ebe8e8,#b6e7cf) ">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top ">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+    
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03"style="background-color: rgb(183, 242, 205);">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="Home.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Sorts.html">Sort</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="stack.html">Stacks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="stack.html">linked list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="stack.html">Graphs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="stack.html">Tree</a>
+          </li>
+        </ul>
+        
+      </div>
+    </nav>
+      
+      <div class="outer">
+        <div class="left">
+          <div class="data">
+            
+            <h1>SELECTION SORT</h1>
+        
+            <p>The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array.<br>
+                1) The subarray which is already sorted.<br>
+                2) Remaining subarray which is unsorted.<br></p>
+              <h2>Working of selection Sort</h2><br><br>
+              <p>1.	Set the first element as minimum.Select first element as minimum<br><br>
+                2.	Compare minimum with the second element. If the second element is smaller than minimum, assign the second element as minimum.<br><br>
+                
+                Compare minimum with the third element. Again, if the third element is smaller, then assign minimum to the third element otherwise do nothing. The process goes on until the last element.Compare minimum with the remaining elements<br><br>
+                3.	After each iteration, minimum is placed in the front of the unsorted list.Swap the first with minimum<br><br>>
+                4.	For each iteration, indexing starts from the first unsorted element. Step 1 to 3 are repeated until all the elements are placed at their correct positions.<br><br>
+                </p>
+                <img src="/shri/selectionsort.jpg" style="width: 100%;">
+                <h2>Algorithm</h2><br><br>
+                <p>selectionSort(array, size)<br>
+                  repeat (size - 1) times<br>
+                  set the first unsorted element as the minimum<br>
+                  for each of the unsorted elements<br>
+                    if element  currentMinimum<br>
+                      set element as new minimum<br>
+                  swap minimum with first unsorted position<br>
+                end selectionSort<br><br>
+                </p>
+                <h2>Time and space complexity</h2><br><br>
+                <p>Time Complexities:
+                  •	Worst Case Complexity: O(n2)<br><br>
+                  If we want to sort in ascending order and the array is in descending order then, the worst case occurs.<br>
+                  •	Best Case Complexity: O(n2)<br><br>
+                  It occurs when the array is already sorted<br>
+                  •	Average Case Complexity: O(n2)<br><br>
+                  It occurs when the elements of the array are in jumbled order (neither ascending nor descending).<br><br>
+                  
+                  Space Complexity:<br><br>
+                  Space complexity is O(1) because an extra variable temp is used.<br>
+                  
+                  </p><br>
+                <h2>Selection sort applications</h2><br><br>
+                <p>The selection sort is used when<br>
+                  •	a small list is to be sorted<br>
+                  •	cost of swapping does not matter<br>
+                  •	checking of all the elements is compulsory<br>
+                  •	cost of writing to a memory matters like in flash memory (number of writes/swaps is O(n) as compared to O(n2) of bubble sort)<br>
+                  </p>
+            
+                </div></div>
+        <div class="right">
+          <div class="calculate" style="font-size: 1rem;width: 50%;">
+            
+            <div id="form">
+              <p >BUBBLE SORT</p>
+              <p >Enter the numbers below</p>
+              <script src="selectionsort.js"></script>
+              
+                <input type="text"id="inputarr" style="width: 50%;"><br><br>
+             
+        
+              <button onclick="bblSort()" >sort</button>
+            </div>
+        <div id="demo1"></div>
+            </div>
+      </div>
+            
+          </div>
+        </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <footer style="background-color: #313332;">
+        <div class="container" >
+          <div class="sec aboutus" >
+            <h2>About Us</h2>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
+              explicabo quaerat sit voluptatibus rerum soluta assumenda,
+              voluptates.
+            </p>
+            <ul class="sci">
+              <li>
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="sec quickLinks">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="#">Home</a></li>
+            
+            </ul>
+          </div>
+          <div class="sec contact">
+            <h2>Contact Us</h2>
+            <ul class="info">
+              <li>
+                <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                <span>Survey No. 27</span>
+              </li>
+              <li>
+                <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                <p><a href="tel:123456789">+91 1234567890</a></p>
+              </li>
+              <li>
+                <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                <p>
+                  <a href="mailto:agrisenseinfo@gmail.com"
+                    >algoeasyinfo@gmail.com</a
+                  >
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+      </footer>
+    
+    </body>
+</html>

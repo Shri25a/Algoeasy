@@ -1,0 +1,59 @@
+* {
+    margin:0;
+    padding:0;
+    
+}
+ 
+.outer{
+    
+	display:flex;
+	flex-direction:row;
+}
+.left{
+	
+	width:65vw;
+    height:100vh;
+    overflow: scroll;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    
+}
+.right{
+	
+    background-color:#b6e7cf;
+    border-color: black;
+	width:35vw;
+    height:100vh;
+  
+}
+.data{
+    margin-top: 10vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    font-size: 1rem;
+}
+.calculate{
+    margin-top: 10vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    font-size: 1rem;
+}
+::-webkit-scrollbar{
+    width:1px;
+}
+::-webkit-scrollbar-track
+{
+    background-color: rgb(60, 58, 58);
+    border-radius: 1%;
+}
+
+.demo{
+    width: 80vw;
+    font-size: 1vh;
+    margin-right: 2vh  ;
+}
+.form{
+    align-items: center;
+}

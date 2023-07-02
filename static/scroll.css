@@ -1,0 +1,52 @@
+body{
+    margin:0;
+    
+}
+.scrollbg
+{
+    position: absolute;
+    background-color: rgb(129, 215, 215);
+    width: 950px;
+    height: 550px;
+    top: 100px;
+    left:300px;
+    
+    
+}
+.scrolldiv
+{
+    position: absolute;
+    width: 950px;
+    background-color: rgb(65, 60, 60);
+    height: 550px;
+    
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.scrollobj
+{
+    color: rgb(239, 240, 239);
+    background-color: rgba(52, 50, 50, 0.38);
+    padding: auto;
+}
+.scrollbg .scrolldiv .scrollobj p
+{
+        color:rgb(233, 240, 233);
+}
+h1{
+    position: absolute;
+    top: 60px;
+    left:300px;
+    font-style: normal;
+    color: rgb(10, 10, 10);
+    
+}
+.scrollbg .scrolldiv .scrollobj img{
+    background-color: aliceblue;
+}
+.scrollbg .scrolldiv .scrollobj video
+{
+    width:100%;
+    padding: 100px;
+    border-radius: 10px;
+}

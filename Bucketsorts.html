@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/index.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni&display=swap" rel="stylesheet"> 
+<link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="test.css">
+
+    <title>BubbleSort</title>
+    <script src="bucketsort.js"></script>
+  </head>
+  <body style="background:linear-gradient(to right,#ebe8e8,#b6e7cf)">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top ">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+    
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03"style="background-color: rgb(183, 242, 205);">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="Home.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Sorts.html">Sort</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="stack.html">Stacks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="stack.html">linked list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="stack.html">Graphs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="stack.html">Tree</a>
+          </li>
+        </ul>
+        
+      </div>
+    </nav>
+      </div>
+      <div class="outer">
+        <div class="left">
+          <div class="data">
+            <h1>BUCKET SORT</h1>
+            <p>Bucket sort is a sorting algorithm that separate the elements into multiple groups said to be buckets. Elements in bucket sort are first uniformly divided into groups called buckets, and then they are sorted by any other sorting algorithm. After that, elements are gathered in a sorted manner.</p>   <br>
+             <p>The basic procedure of performing the bucket sort is given as follows -<br><br>
+
+              1.First, partition the range into a fixed number of buckets.<br>
+              2.Then, toss every element into its appropriate bucket.<br>
+              3.After that, sort each bucket individually by applying a sorting algorithm.<br>
+              4.And at last, concatenate all the sorted buckets.<br></p><br>
+              <img src="/shri/bucketsort.jpg" style="height: 50%;width: 50%;"><br>
+              <h2>Algorithm</h2><br><br>
+              <p>Bucket Sort(A[])  <br><br>
+                1.  Let B[0....n-1] be a new array<br>  
+                2.  n=length[A]  <br>
+                3.  for i=0 to n-1  <br>
+                4.  make B[i] an empty list<br>    
+                5.  for i=1 to n  <br>
+                6.  do insert A[i] into list B[n a[i]]><br>  
+                7.  for i=0 to n-1  <br>
+                8.  do sort list B[i] with insertion-sort<br>  
+                9.  Concatenate lists B[0], B[1],........, B[n-1] together in order<br>  
+                End   </p><br>
+                <h2>Time complexity</h2><br><br>
+                <p>Best Case Complexity - It occurs when there is no sorting required, i.e. the array is already sorted. In Bucket sort, best case occurs when the elements are uniformly distributed in the buckets. The complexity will be better if the elements are already sorted in the buckets.<br><br>
+                  If we use the insertion sort to sort the bucket elements, the overall complexity will be linear, i.e., O(n + k), where O(n) is for making the buckets, and O(k) is for sorting the bucket elements using algorithms with linear time complexity at best case.
+                  The best-case time complexity of bucket sort is O(n + k).<br><br>
+                  Average Case Complexity - It occurs when the array elements are in jumbled order that is not properly ascending and not properly descending. Bucket sort runs in the linear time, even when the elements are uniformly distributed. The average case time complexity of bucket sort is O(n + K).<br><br>
+                  Worst Case Complexity - In bucket sort, worst case occurs when the elements are of the close range in the array, because of that, they have to be placed in the same bucket. So, some buckets have more number of elements than others.<br><br>
+                  The complexity will get worse when the elements are in the reverse order.
+                  The worst-case time complexity of bucket sort is O(n2).<br><br></p>
+                  <video src="/shri/bucket sort.mp4" class="video"controls></video>
+          </div>
+        </div>
+        <div class="right">
+          <div class="calculate">
+            
+            <div id="form">
+              <p style="font-size: 1.5rem;">BUCKET SORT</p>
+              <p style="font-size: 1rem;">Enter the numbers below</p>
+              <script src="selectionsort.js"></script>
+              <input type="text"id="inputarr"><br><br>
+        
+              <button onclick="BucketSort()" >sort</button>
+            </div>
+        <div id="demo1"></div>
+            </div>
+      </div>
+            
+          </div>
+        </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <footer style="background-color: #313332;">
+        <div class="container">
+          <div class="sec aboutus">
+            <h2>About Us</h2>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
+              explicabo quaerat sit voluptatibus rerum soluta assumenda,
+              voluptates.
+            </p>
+            <ul class="sci">
+              <li>
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="sec quickLinks">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="#">Home</a></li>
+          
+            </ul>
+          </div>
+          <div class="sec contact">
+            <h2>Contact Us</h2>
+            <ul class="info">
+              <li>
+                <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                <span>Survey No. 27</span>
+              </li>
+              <li>
+                <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                <p><a href="tel:123456789">+91 1234567890</a></p>
+              </li>
+              <li>
+                <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                <p>
+                  <a href="mailto:agrisenseinfo@gmail.com"
+                    >algoeasyinfo@gmail.com</a
+                  >
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+      </footer>
+    
+    </body>
+</html>

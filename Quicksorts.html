@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/index.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni&display=swap" rel="stylesheet"> 
+<link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="test.css">
+
+    <title>BubbleSort</title>
+    <script src="quicksort.js"></script>
+  </head>
+  <body style="background:linear-gradient(to right,#ebe8e8,#b6e7cf) ">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top ">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+    
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03"style="background-color: rgb(183, 242, 205);">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="Home.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Sorts.html">Sort</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="stack.html">Stacks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="stack.html">linked list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="stack.html">Graphs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="stack.html">Tree</a>
+          </li>
+        </ul>
+        
+      </div>
+    </nav>
+      </div>
+      <div class="outer">
+        <div class="left">
+          <div class="data">
+            <h1>QUICK SORT</h1>
+            p>QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways. <br>
+
+                1.Always pick first element as pivot.<br>
+                2.Always pick last element as pivot <br>
+                3.Pick a random element as pivot.<br></p><br>
+              <h2 style="color: black;">Working of Quick sort</h2><br>
+              <img src="/shri/quick soert1.jpg" width="80%">
+              <img src="/shri/quick sort2.jpg" width="80%"><br>
+              <p>1. Select the Pivot Element<br><br>
+                There are different variations of quicksort where the pivot element is selected from different positions. Here, we will be selecting the rightmost element of the array as the pivot element.<br>
+                2. Rearrange the Array<br><br>
+                Now the elements of the array are rearranged so that elements that are smaller than the pivot are put on the left and the elements greater than the pivot are put on the right.
+                Put all the smaller elements on the left and greater on the right of pivot element<br><br>
+                Here's how we rearrange the array:<br><br>
+                1.	A pointer is fixed at the pivot element. The pivot element is compared with the elements beginning from the first index.Comparison of pivot element with element beginning from the first index<br>
+                2.	If the element is greater than the pivot element, a second pointer is set for that element.If the element is greater than the pivot element, a second pointer is set for that element.<br>
+                3.	Now, pivot is compared with other elements. If an element smaller than the pivot element is reached, the smaller element is swapped with the greater element found earlier.Pivot is compared with other elements.<br>
+                4.	Again, the process is repeated to set the next greater element as the second pointer. And, swap it with another smaller element.The process is repeated to set the next greater element as the second pointer.<br>
+                5.	The process goes on until the second last element is reached.The process goes on until the second last element is reached.<br>
+                6.	Finally, the pivot element is swapped with the second pointer.Finally, the pivot element is swapped with the second pointer.<br>
+                3. Divide Subarrays<br><br>
+                Pivot elements are again chosen for the left and the right sub-parts separately. And, step 2 is repeated.<br>
+                Select pivot element of in each half and put at correct place using recursion<br>
+                </p><br>
+                <h2>Algorithm</h2><br><br>
+                <p>1.	QUICKSORT (array A, start, end)<br>     
+                  2.	{  <br>
+                  3.	  if (start < end) <br>    
+                  4.	  {  <br>
+                  5.	 p = partition(A, start, end) <br> 
+                  6.	 QUICKSORT (A, start, p - 1)<br>    
+                  7.	 QUICKSORT (A, p + 1, end)<br>    
+                  8.	 }<br>   
+                  9.	} <br><br> 
+                  1.	PARTITION (array A, start, end)<br>     
+                  2.	{  <br>
+                  3.	  pivot ? A[end]<br>     
+                  4.	  i ? start-1<br>     
+                  5.	  for j ? start to end -1 {<br>  
+                  6.	  do if (A[j] < pivot) {<br>    
+                  7.	  then i ? i + 1<br>     
+                  8.	  swap A[i] with A[j]<br>   
+                  9.	   }}<br>   
+                  10.	  swap A[i+1] with A[end]<br>     
+                  11.	  return i+1<br>  
+                  12.	}<br>  
+                  </p>
+                  <h2>Time and space complexity</h2><br>
+                  <p>	Best Case Complexity - In Quicksort, the best-case occurs when the pivot element is the middle element or near to the middle element. The best-case time complexity of quicksort is O(n*logn).<br>
+                    	Average Case Complexity - It occurs when the array elements are in jumbled order that is not properly ascending and not properly descending. The average case time complexity of quicksort is O(n*logn).<br>
+                    	Worst Case Complexity - In quick sort, worst case occurs when the pivot element is either greatest or smallest element. Suppose, if the pivot element is always the last element of the array, the worst case would occur when the given array is sorted already in ascending or descending order. The worst-case time complexity of quicksort is O(n2).<br>
+                    </p>
+          
+              </div></div>
+        <div class="right">
+          <div class="calculate">
+            
+            <div id="form">
+              <p style="font-size: 1.5rem;">QUICK SORT</p>
+              <p style="font-size: 1rem;">Enter the numbers below</p>
+              
+              <input type="text"id="inputarr"><br><br>
+        
+              <button onclick="Quicksort()" >sort</button>
+            </div>
+        <div id="demo1"></div>
+            </div>
+      </div>
+            
+          </div>
+        </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <footer style="background-color: #313332;">
+        <div class="container" >
+          <div class="sec aboutus" >
+            <h2>About Us</h2>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
+              explicabo quaerat sit voluptatibus rerum soluta assumenda,
+              voluptates.
+            </p>
+            <ul class="sci">
+              <li>
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="sec quickLinks">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="#">Home</a></li>
+             
+            </ul>
+          </div>
+          <div class="sec contact">
+            <h2>Contact Us</h2>
+            <ul class="info">
+              <li>
+                <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                <span>Survey No. 27</span>
+              </li>
+              <li>
+                <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                <p><a href="tel:123456789">+91 1234567890</a></p>
+              </li>
+              <li>
+                <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                <p>
+                  <a href="mailto:agrisenseinfo@gmail.com"
+                    >algoeasyinfo@gmail.com</a
+                  >
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+      </footer>
+    
+    </body>
+</html>
