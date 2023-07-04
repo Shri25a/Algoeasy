@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+    
+    <link rel="stylesheet" href="/static/index.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni&display=swap" rel="stylesheet"> 
+    <title>Home</title>
+  </head>
+  <body style="background:linear-gradient(to right,#edeaea,#239b56) ">
+    
+      <nav class="navbar navbar-expand-md navbar-light fixed-top ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03" style="background-color: rgb(183, 242, 205);">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="Home.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Sorts.html">Sort</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="stack.html">Stacks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="stack.html">linked list</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="graphs.html">Graphs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="stack.html">Tree</a>
+            </li>
+          </ul>
+          
+        </div>
+      </nav>
+      <div style="margin-top: 4%;margin-left: 3%;margin-right: 2%;border: #0f100f;padding: 1%;">
+        <h4>GRAPHS</h4>
+        <p style="font-size: 1rem;font-family: cursive;">A graph can be defined as group of vertices and edges that are used to connect these vertices. A graph can be seen as a cyclic tree, where the vertices (Nodes) maintain any complex relationship among them instead of having parent child relationship</p>
+        <p >Definition</p>
+        <p style="font-size: 1rem;font-family: cursive;">A graph G can be defined as an ordered set G(V, E) where V(G) represents the set of vertices and E(G) represents the set of edges which are used to connect these vertices.
+
+            A Graph G(V, E) with 5 vertices (A, B, C, D, E) and six edges ((A,B), (B,C), (C,E), (E,D), (D,B), (D,A)) is shown in the following figure</p>
+        <img src="/static/images/graph1.jpg" width="30%" height="30%">
+      
+      
+        
+     <div style="overflow: scroll;">
+        <div class="card" style="margin-right: 30%;padding: 2%;margin-top: 10%;background-color: rgb(108, 171, 144);">
+          <div class="card-body">
+            <h5 class="card-title">Directed graphs</h5>
+            <p class="card-text"style="font-family:cursive;font: 1rem;">Another name for the directed graphs is digraphs. A graph is called a directed graph or digraph if all the edges present between any vertices or nodes of the graph are directed or have a defined direction. By directed edges, we mean the edges of the graph that have a direction to determine from which node it is starting and at which node it is ending.
+            </p>
+            <img src="/static/images/direct.jpg" width="25%"height="25%">
+            
+          </div>
+        </div><br>
+        <div class="card" style="margin-left: 30%;padding: 2%;margin-top: 2%;background-color: rgb(108, 171, 144);" >
+          <div class="card-body">
+            <h5 class="card-title">Undirected Graphs</h5>
+            <p class="card-text"style="font: 1rem ;font-family: cursive;">A graph is called a non-directed graph if all the edges present between any graph nodes are non-directed. By non-directed edges, we mean the edges of the graph that cannot be determined from the node it is starting and at which node it is ending. All the edges for a graph need to be non-directed to call it a non-directed graph. All the edges of a non-directed graph don't have any direction</p>
+            <img src="/static/images/direct.jpg" width="25%"height="25%">
+          </div>
+        </div>
+        <div class="card" style="margin-right: 30%;padding: 2%;margin-top: 10%;background-color: rgb(108, 171, 144);">
+          <div class="card-body">
+            <h5 class="card-title">Connected Graphs</h5>
+            <p class="card-text" style="font: 1rem ;font-family: cursive;">For a graph to be labelled as a connected graph, there must be at least a single path between every pair of the graph's vertices. In other words, we can say that if we start from one vertex, we should be able to move to any of the vertices that are present in that particular graph, which means there exists at least one path between all the vertices of the graph. </p>
+            <img src="/static/images/connected.jpg" width="25%" height="25%">
+            <p class="card-text" style="font: 1rem ;font-family: cursive;">The graph shown above is an example of a connected graph because we start from any one of the vertices of the graph and start moving towards any other remaining vertices of the graph. There will exist at least one path for traversing the graph.</p>
+            
+          </div>
+        </div><br>
+        <div class="card" style="margin-left: 30%;padding: 2%;margin-top: 2%;background-color: rgb(108, 171, 144);">
+          <div class="card-body">
+            <h5 class="card-title">Disconnected Graps</h5>
+            <p class="card-text" style="font: 1rem ;font-family: cursive;">A graph is said to be a disconnected graph where there does not exist any path between at least one pair of vertices. In other words, we can say that if we start from any one of the vertices of the graph and try to move to the remaining present vertices of the graph and there exists not even a single path to move to that vertex, then it is the case of the disconnected graph. If any one of such a pair of vertices doesn't have a path between them, it is called a disconnected graph.
+              <img src="/static/images/disconnected.jpg" width="25%" height="25%"></p>
+            
+            <p class="card-text" style="font: 1rem ;font-family: cursive;">The graph shown above is a disconnected graph. The above graph is called a disconnected graph because at least one pair of vertices doesn't have a path to traverse starting from either node.</p>
+            
+          </div>
+        </div><br>
+        <div class="card" style="margin-right: 30%;padding: 2%;margin-top: 10%;background-color: rgb(108, 171, 144);">
+          <div class="card-body">
+            <h5 class="card-title">Complete Graphs</h5>
+            <p class="card-text" style="font: 1rem ;font-family: cursive;">A graph is said to be a complete graph if, for all the vertices of the graph, there exists an edge between every pair of the vertices. In other words, we can say that all the vertices are connected to the rest of all the vertices of the graph. A complete graph of 'n' vertices contains exactly nC2 edges, and a complete graph of 'n' vertices is represented as Kn.</p>
+            <img src="/static/images/connected.jpg" width="25%" height="25%">
+            <p class="card-text" style="font: 1rem ;font-family: cursive;">There are two graphs name K3 and K4 shown in the above image, and both graphs are complete graphs. Graph K3 has three vertices, and each vertex has at least one edge with the rest of the vertices. Similarly, for graph K4, there are four nodes named vertex E, vertex F, vertex G, and vertex H. For example, the vertex F has three edges connected to it to connect it to the respective three remaining vertices of the graph. Likewise, for the other three reaming vertices, there are three edges associated with each one of them. As all the vertices of this graph have a separate edge for other vertices, it is called a complete graph.</p>
+            
+          </div>
+        </div><br>
+        <div class="card" style="margin-left: 30%;padding: 2%;margin-top: 2%;background-color: rgb(108, 171, 144);">
+          <div class="card-body">
+            <h5 class="card-title">Infinite Graphs</h5>
+            <p class="card-text" style="font: 1rem ;font-family: cursive;">If the number of vertices in the graph and the number of edges in the graph are infinite in number, that means the vertices and the edges of the graph cannot be counted, then that graph is called an infinite graph. </p>
+            <img src="/static/images/infinite.jpg" width="25%" height="25%">
+            
+          </div>
+        </div><br>
+        
+        
+     </div>
+        
+       </div>
+      </div>
+      
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+          <footer>
+            <div class="container">
+              <div class="sec aboutus">
+                <h2>About Us</h2>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
+                  explicabo quaerat sit voluptatibus rerum soluta assumenda,
+                  voluptates.
+                </p>
+                <ul class="sci">
+                  <li>
+                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="sec quickLinks">
+                <h2>Quick Links</h2>
+                <ul>
+                  <li><a href="Home.html">Home</a></li>
+                  
+                </ul>
+              </div>
+              <div class="sec contact">
+                <h2>Contact Us</h2>
+                <ul class="info">
+                  <li>
+                    <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                    <span>Survey No. 27</span>
+                  </li>
+                  <li>
+                    <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                    <p><a href="tel:123456789">+91 1234567890</a></p>
+                  </li>
+                  <li>
+                    <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                    <p>
+                      <a href="mailto:agrisenseinfo@gmail.com"
+                        >algoeasyinfo@gmail.com</a
+                      >
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </footer>
+  </body>
+</html>
