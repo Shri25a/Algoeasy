@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/index.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni&display=swap" rel="stylesheet"> 
+<link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="test.css">
+
+    <title>BST</title>
+    <script src="countsort.js"></script>
+  </head>
+  <body style="background:linear-gradient(to right,#ebe8e8,#b6e7cf) ">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top ">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+    
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03"style="background-color: rgb(183, 242, 205);">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="Home.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Sorts.html">Sort</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="stack.html">Stacks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="linkedlist/linkedlist.html">linked list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/graphs/graphs.html">Graphs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="Tree/tree.htmls">Tree</a>
+          </li>
+        </ul>
+        
+      </div>
+    </nav>
+      </div>
+      <div class="outer">
+        <div class="left">
+          <div class="data">
+            <h2 style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;"> BINARY SEARCH TREE</h2>
+      <p style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">
+        A binary search tree follows some order to arrange the elements. In a Binary search tree, the value of left node must be smaller than the parent node, and the value of right node must be greater than the parent node. This rule is applied recursively to the left and right subtrees of the root.<br>
+Let's understand the concept of Binary search tree with an example.
+
+      </p>
+      <img src="/shri/binary-search-tree1.png" width="30%">
+      <img src="/shri/binary-search-tree2.png" width="30%">
+      <p style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">
+        In the above figure, we can observe that the root node is 40, and all the nodes of the left subtree are smaller than the root node, and all the nodes of the right subtree are greater than the root node.<br>
+
+        Similarly, we can see the left child of root node is greater than its left child and smaller than its right child. So, it also satisfies the property of binary search tree. Therefore, we can say that the tree in the above image is a binary search tree.<br>
+
+        Suppose if we change the value of node 35 to 55 in the above tree, check whether the tree will be binary search tree or not.<br>
+      </p>
+      <h2 style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">INSERTION CODE</h2>
+      <pre>
+        If node == NULL 
+            return createNode(data)
+        if (data < node->data)
+            node->left  = insert(node->left, data);
+        else if (data > node->data)
+            node->right = insert(node->right, data);  
+        return node;
+      </pre>
+      <h2 style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">Search code</h2>
+      <pre>
+        If root == NULL 
+            return NULL;
+        If number == root->data 
+            return root->data;
+        If number < root->data 
+            return search(root->left)
+        If number > root->data 
+            return search(root->right)
+      </pre>
+              </div></div>
+        <div class="right">
+          <div class="calculate">
+            
+            <h2 style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">IMPLEMENTATION</h2>
+      <pre>
+        #include <iostream>  
+            using namespace std;  
+            struct Node {  
+                int data;  
+                Node *left;  
+                Node *right;  
+            };  
+            Node* create(int item)  
+            {  
+                Node* node = new Node;  
+                node->data = item;  
+                node->left = node->right = NULL;  
+                return node;  
+            }  
+            /*Inorder traversal of the tree formed*/  
+            void inorder(Node *root)  
+            {  
+                if (root == NULL)  
+                    return;  
+                inorder(root->left); //traverse left subtree  
+                cout<< root->data << "   "; //traverse root node  
+                inorder(root->right); //traverse right subtree  
+            }  
+            Node* findMinimum(Node* cur) /*To find the inorder successor*/  
+            {  
+                while(cur->left != NULL) {  
+                    cur = cur->left;  
+                }  
+                return cur;  
+            }  
+            Node* insertion(Node* root, int item) /*Insert a node*/  
+            {  
+                if (root == NULL)  
+                    return create(item); /*return new node if tree is empty*/  
+                if (item < root->data)  
+                    root->left = insertion(root->left, item);  
+                else  
+                    root->right = insertion(root->right, item);  
+                return root;  
+            }  
+            void search(Node* &cur, int item, Node* &parent)  
+            {  
+                while (cur != NULL && cur->data != item)  
+                {  
+                    parent = cur;  
+                    if (item < cur->data)  
+                        cur = cur->left;  
+                    else  
+                        cur = cur->right;  
+                }  
+            }  
+            void deletion(Node*& root, int item) /*function to delete a node*/  
+            {  
+                Node* parent = NULL;  
+                Node* cur = root;  
+                search(cur, item, parent); /*find the node to be deleted*/  
+                if (cur == NULL)  
+                    return;  
+                if (cur->left == NULL && cur->right == NULL) /*When node has no children*/  
+                {  
+                    if (cur != root)  
+                    {  
+                        if (parent->left == cur)  
+                            parent->left = NULL;  
+                        else  
+                            parent->right = NULL;  
+                    }  
+                    else  
+                        root = NULL;  
+                    free(cur);       
+                }  
+                else if (cur->left && cur->right)  
+                {  
+                    Node* succ  = findMinimum(cur->right);  
+                    int val = succ->data;  
+                    deletion(root, succ->data);  
+                    cur->data = val;  
+                }  
+                else  
+                {  
+                    Node* child = (cur->left)? cur->left: cur->right;  
+                    if (cur != root)  
+                    {  
+                        if (cur == parent->left)  
+                            parent->left = child;  
+                        else  
+                            parent->right = child;  
+                    }  
+                    else  
+                        root = child;  
+                    free(cur);  
+                }  
+            }  
+            int main()  
+            {  
+              Node* root = NULL;  
+              root = insertion(root, 45);  
+              root = insertion(root, 30);  
+              root = insertion(root, 50);  
+              root = insertion(root, 25);  
+              root = insertion(root, 35);  
+              root = insertion(root, 45);  
+              root = insertion(root, 60);  
+              root = insertion(root, 4);  
+              printf("The inorder traversal of the given binary tree is - \n");  
+              inorder(root);  
+              deletion(root, 25);  
+              printf("\nAfter deleting node 25, the inorder traversal of the given binary tree is - \n");  
+              inorder(root);   
+              insertion(root, 2);  
+              printf("\nAfter inserting node 2, the inorder traversal of the given binary tree is - \n");  
+              inorder(root);  
+              return 0;  
+            }  
+      </pre>
+        <div id="demo1"></div>
+            </div>
+      </div>
+            
+          </div>
+        </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <footer style="background-color: #313332;">
+        <div class="container" >
+          <div class="sec aboutus" >
+            <h2>About Us</h2>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
+              explicabo quaerat sit voluptatibus rerum soluta assumenda,
+              voluptates.
+            </p>
+            <ul class="sci">
+              <li>
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="sec quickLinks">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="#">Home</a></li>
+            
+            </ul>
+          </div>
+          <div class="sec contact">
+            <h2>Contact Us</h2>
+            <ul class="info">
+              <li>
+                <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                <span>Survey No. 27</span>
+              </li>
+              <li>
+                <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                <p><a href="tel:123456789">+91 1234567890</a></p>
+              </li>
+              <li>
+                <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                <p>
+                  <a href="mailto:agrisenseinfo@gmail.com"
+                    >algoeasyinfo@gmail.com</a
+                  >
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+      </footer>
+    
+    </body>
+</html>

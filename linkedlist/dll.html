@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+    
+    <link rel="stylesheet" href="static/index.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni&display=swap" rel="stylesheet"> 
+    <title>Home</title>
+  </head>
+  <body style="background:linear-gradient(to right,#edeaea,#239b56) ">
+    
+      <nav class="navbar navbar-expand-md navbar-light fixed-top ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03" style="background-color: rgb(183, 242, 205);">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="Home.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Sorts.html">Sort</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="stack.html">Stacks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="linkedlist/linkedlist.html">linked list</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/graphs/graphs.html">Graphs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="Tree/tree.html">Tree</a>
+            </li>
+          </ul>
+          
+        </div>
+      </nav>
+      <div style="margin-top: 4%;">
+      <div style="margin-left: 2%;font-size: 1rem;font-family:cursive">
+        <h1>DOUBLY LINKED LISTR</h1>
+        <p>Doubly linked list is a complex type of linked list in which a node contains a pointer to the previous as well as the next node in the sequence. Therefore, in a doubly linked list, a node consists of three parts: node data, pointer to the next node in sequence (next pointer) , pointer to the previous node (previous pointer). A sample node in a doubly linked list is shown in the figure.<br>
+        <img src="/static/images/dll.png" width="50%"><br>
+        <p>Algorithms and codes</p>
+        <a href="#syntax">CREATION</a><br>
+        <a href="#insertion">INSERTION</a><br>
+        <a href="#deletion">DELETION</a><br>
+        <a href="#complexity">COMPLEXITY</a><br>
+        
+
+        <h3>Why doubly  linked list</h3>
+        <p>The following are the advantages of Doubly Linked List:<br><br>
+
+            It allows traversing in both forward and backward directions because of the next and previous pointers, unlike the singly linked list, which allows traversing in only one direction.<br><br>
+             
+            Deletion of elements is more straightforward compared to a singly linked list. This is because to delete an element, we need access to the element to be deleted and the element previous to it. So, we require two pointers for deletion in a singly linked list. In contrast, in a doubly-linked list, there is no need to maintain an extra pointer as each element carries the information of the previous element.<br><br>
+             
+            Reversing a doubly linked list is also easy. We only need to swap each element’s next and previous pointers and update the head element to point to the last element to reverse a doubly-linked list.<br><br> 
+             
+            We can easily insert a  new element before a given element because we have information for both previous and next element so we can update it accordingly.
+             
+            It is very easy to imple<br><br>
+        </p>
+        <h3>Disadvantages</h3>
+        <p>The following are the advantages of Doubly Linked List:<br><br>
+
+            It allows traversing in both forward and backward directions because of the next and previous pointers, unlike the singly linked list, which allows traversing in only one direction.<br><br>
+             
+            Deletion of elements is more straightforward compared to a singly linked list. This is because to delete an element, we need access to the element to be deleted and the element previous to it. So, we require two pointers for deletion in a singly linked list. In contrast, in a doubly-linked list, there is no need to maintain an extra pointer as each element carries the information of the previous element.<br><br>
+             
+            Reversing a doubly linked list is also easy. We only need to swap each element’s next and previous pointers and update the head element to point to the last element to reverse a doubly-linked list.<br><br> 
+             
+            We can easily insert a  new element before a given element because we have information for both previous and next element so we can update it accordingly.<br><br>
+             
+            It is very easy to imple</p>
+        <h3>Uses of DLL</h3>
+        <p>It is used in web browsers to implement the backward and forward navigation of web pages through the back and forward buttons.<br><br>
+ 
+            Various applications implement the Undo and Redo functionality using a doubly-linked list.<br><br>
+             
+            Doubly linked lists are used in constructing the Most recently used(MRU) or Least Recently Used(LRU) cache.<br><br>
+             
+            It is used in games. For example, to represent the classical deck of cards.<br><br>
+             
+            Various Data Structures can be implemented, like stacks, hash tables, binary trees etc.<br><br>
+             
+            The thread scheduler uses them in the operating system to maintain a list of all the running processes.</p>
+        </p>
+
+         
+
+            
+      </div>
+      <div id="syntax">
+        <h4> Node creation</h4>
+        <pre>struct node   
+            {  
+                struct node *prev;   
+                int data;  
+                struct node *next;   
+            }    </pre>
+      </div>
+      <h4>code</h4>
+      <pre>struct node   
+        {  
+            struct node *prev;  
+            int data;  
+            struct node *next;  
+        };  
+        struct node *head;   </pre>
+      <div id="insertion">
+        <h4>INSERTION</h4>
+        <h4>Algorithm</h4>
+        <pre>Step 1: IF ptr = NULL
+            Write OVERFLOW
+           Go to Step 9
+           [END OF IF]
+          
+          Step 2: SET NEW_NODE = ptr
+          Step 3: SET ptr = ptr -> NEXT
+          Step 4: SET NEW_NODE -> DATA = VAL
+          Step 5: SET NEW_NODE -> PREV = NULL
+          Step 6: SET NEW_NODE -> NEXT = START
+          Step 7: SET head -> PREV = NEW_NODE
+          Step 8: SET head = NEW_NODE
+          Step 9: EXIT
+            </pre>
+
+        <h4>code</h4>
+        <pre>void insertbeginning(int item)  
+            {  
+               
+               struct node *ptr = (struct node *)malloc(sizeof(struct node));  
+               if(ptr == NULL)  
+               {  
+                   printf("\nOVERFLOW");  
+               }  
+               else  
+               {  
+                  
+                  
+               if(head==NULL)  
+               {  
+                   ptr->next = NULL;  
+                   ptr->prev=NULL;  
+                   ptr->data=item;  
+                   head=ptr;  
+               }  
+               else   
+               {  
+                   ptr->data=item;  
+                   ptr->prev=NULL;  
+                   ptr->next = head;  
+                   head->prev=ptr;  
+                   head=ptr;  
+               }  
+            }   </pre>
+      </div>
+      <div id="deletion">
+        <h4>DELETION</h4>
+        <h4> Algorithm</h4>
+        <pre>STEP 1: IF HEAD = NULL
+            WRITE UNDERFLOW
+            GOTO STEP 6
+            STEP 2: SET PTR = HEAD
+            STEP 3: SET HEAD = HEAD → NEXT
+            STEP 4: SET HEAD → PREV = NULL
+            STEP 5: FREE PTR
+            STEP 6: EXIT</pre>
+        <h4>code</h4>
+        <pre>void deletion_last()  
+            {  
+                struct node *ptr;  
+                if(head == NULL)  
+                {  
+                    printf("\n UNDERFLOW");  
+                }  
+                else if(head->next == NULL)  
+                {  
+                    head = NULL;   
+                    free(head);   
+                    printf("\nnode deleted\n");  
+                }  
+                else   
+                {  
+                    ptr = head;   
+                    if(ptr->next != NULL)  
+                    {  
+                        ptr = ptr -> next;   
+                    }  
+                    ptr -> prev -> next = NULL;   
+                    free(ptr);  
+                    printf("\nnode deleted\n");  
+                }  
+            }    </pre>
+      </div>
+      <div id="complexity">
+        <h4>COMPLEXITY</h4>
+        <p>Best case: O(1)</p>
+        <p>Worst case : O(n)</p>
+      </div>
+    </div>
+    
+    
+      
+   
+      
+      
+
+  
+  
+  </body>
+</html>

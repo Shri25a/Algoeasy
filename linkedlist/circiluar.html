@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+    
+    <link rel="stylesheet" href="static/index.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni&display=swap" rel="stylesheet"> 
+    <title>Home</title>
+  </head>
+  <body style="background:linear-gradient(to right,#edeaea,#239b56) ">
+    
+      <nav class="navbar navbar-expand-md navbar-light fixed-top ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03" style="background-color: rgb(183, 242, 205);">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="Home.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Sorts.html">Sort</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="stack.html">Stacks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="linkedlist/linkedlist.html">linked list</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/graphs/graphs.html">Graphs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="Tree/tree.html">Tree</a>
+            </li>
+          </ul>
+          
+        </div>
+      </nav>
+      <div style="margin-top: 4%;">
+      <div style="margin-left: 2%;font-size: 1rem;font-family:cursive">
+        <h1>Circular Singly Linked List</h1>
+        <p>In a circular Singly linked list, the last node of the list contains a pointer to the first node of the list. We can have circular singly linked list as well as circular doubly linked list.
+
+            We traverse a circular singly linked list until we reach the same node where we started. The circular singly liked list has no beginning and no ending. There is no null value present in the next part of any of the nodes.<br>
+        <img src="/static/images/cll1.png" width="50%"><br>
+        <p>Algorithms and codes</p>
+        <a href="#syntax">CREATION</a><br>
+        <a href="#insertion">INSERTION</a><br>
+        <a href="#deletion">DELETION</a><br>
+        <a href="#complexity">COMPLEXITY</a><br>
+        
+
+        <h3>Why circiluar linked list</h3>
+        <p>
+            The NULL assignment is not required because a node always points to another node.<br>
+            The starting point can be set to any node.<br>
+            Traversal from the first node to the last node is quick.<br>
+        </p>
+        <h3>Applications</h3>
+        <p>It is used in multiplayer games to give a chance to each player to play the game.<br>
+            Multiple running applications can be placed in a circular linked list on an operating system. The os keeps on iterating over these applications.</p>
+        </p>
+
+         
+
+            
+      </div>
+      <div id="syntax">
+        <h4> Node creation</h4>
+        <pre>struct node   
+            {  
+                struct node *prev;   
+                int data;  
+                struct node *next;   
+            }    </pre>
+      </div>
+      <h4>code</h4>
+      <pre>void create(int item)    
+        {    
+                
+            struct node *ptr = (struct node *)malloc(sizeof(struct node));    
+            struct node *temp;  
+            if(ptr == NULL)    
+            {    
+                printf("\nOVERFLOW");    
+            }    
+            else     
+            {    
+                ptr -> data = item;    
+                if(head == NULL)    
+                {    
+                    head = ptr;    
+                    ptr -> next = head;    
+                }    
+                else     
+                {       
+                    temp = head;    
+                    while(temp->next != head)    
+                        temp = temp->next;    
+                    ptr->next = head;     
+                    temp -> next = ptr;     
+                    head = ptr;    
+                }     
+            printf("\nNode Inserted\n");  
+            }    
+                        
+        }     
+        struct node *head;   </pre>
+      <div id="insertion">
+        <h4>INSERTION</h4>
+        <h4>Algorithm</h4>
+        <pre>Step 1: IF PTR = NULL
+            Write OVERFLOW
+           Go to Step 11
+           [END OF IF]
+          
+          Step 2: SET NEW_NODE = PTR
+          Step 3: SET PTR = PTR -> NEXT
+          Step 4: SET NEW_NODE -> DATA = VAL
+          Step 5: SET TEMP = HEAD
+          Step 6: Repeat Step 8 while TEMP -> NEXT != HEAD
+          Step 7: SET TEMP = TEMP -> NEXT
+          [END OF LOOP]
+          
+          Step 8: SET NEW_NODE -> NEXT = HEAD
+          Step 9: SET TEMP → NEXT = NEW_NODE
+          Step 10: SET HEAD = NEW_NODE
+          Step 11: EXIT
+            </pre>
+
+        <h4>code</h4>
+        <pre>void beg_insert(int item)    
+            {    
+                    
+                struct node *ptr = (struct node *)malloc(sizeof(struct node));    
+                struct node *temp;  
+                if(ptr == NULL)    
+                {    
+                    printf("\nOVERFLOW");    
+                }    
+                else     
+                {    
+                    ptr -> data = item;    
+                    if(head == NULL)    
+                    {    
+                        head = ptr;    
+                        ptr -> next = head;    
+                    }    
+                    else     
+                    {       
+                        temp = head;    
+                        while(temp->next != head)    
+                            temp = temp->next;    
+                        ptr->next = head;     
+                        temp -> next = ptr;     
+                        head = ptr;    
+                    }     
+                printf("\nNode Inserted\n");  
+                }    
+                            
+            }      </pre>
+      </div>
+      <div id="deletion">
+        <h4>DELETION</h4>
+        <h4> Algorithm</h4>
+        <pre>Step 1: IF HEAD = NULL
+            Write UNDERFLOW
+              Go to Step 8
+             [END OF IF]
+            
+            Step 2: SET PTR = HEAD
+            Step 3: Repeat Step 4 while PTR → NEXT != HEAD
+            Step 4: SET PTR = PTR → next
+            [END OF LOOP]
+            
+            Step 5: SET PTR → NEXT = HEAD → NEXT
+            Step 6: FREE HEAD
+            Step 7: SET HEAD = PTR → NEXT
+            Step 8: EXIT
+            </pre>
+        <h4>code</h4>
+        <pre>void beg_delete()  
+            {  
+                struct node *ptr;  
+                if(head == NULL)  
+                {  
+                    printf("\nUNDERFLOW\n");      
+                }  
+                else if(head->next == head)  
+                {  
+                    head = NULL;  
+                    free(head);  
+                    printf("\nNode Deleted\n");   
+                }  
+                  
+                else  
+                {     
+                    ptr = head;   
+                    while(ptr -> next != head)  
+                        ptr = ptr -> next;   
+                    ptr->next = head->next;  
+                    free(head);  
+                    head = ptr->next;  
+                    printf("\nNode Deleted\n");   
+                }  
+            }   </pre>
+      </div>
+      <div id="complexity">
+        <h4>COMPLEXITY</h4>
+        <pre>Circular Linked List Complexity	Time Complexity	Space Complexity
+            Insertion Operation	O(1) or O(n)	O(1)
+            Deletion Operation	O(1)	O(1)</pre>
+      </div>
+    </div>
+    
+    
+      
+   
+      
+      
+
+  
+  
+  </body>
+</html>

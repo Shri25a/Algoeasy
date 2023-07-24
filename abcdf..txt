@@ -1,8 +1,80 @@
-<h1 style="color: rgb(39, 18, 59);">SORTING??</h1><br>
-      <p style="color:rgb(38, 26, 62);padding:2%;border-color: blue;">        Sorting is a process of ordering or placing a list of elements from a collection in some kind of order. It is nothing but storage of data in sorted order. Sorting can be done in ascending and descending order. It arranges the data in a sequence which makes searching easier.</p><br>
-      <h1 style="color: rgb(39, 18, 59);">COMPARISON BASED SORTING</h1><br>
-      <p style="color:rgb(38, 26, 62);padding:2%;border-color: blue;">In comparison based sorting, elements of an array are compared with each other to find the sorted array. e.g:Bubble sort
-                 selection sort
-                merge sort
-                heap sort
-                quick sort</p><br></div>
+<h2 style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">TREE TRAVERSEL</h2>
+      <p style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">Traversal is a process to visit all the nodes of a tree and may print their values too. Because, all nodes are connected via edges (links) we always start from the root (head) node. That is, we cannot randomly access a node in a tree. There are three ways which we use to traverse a tree −</p><br>
+      <a href="#inorder">INORDER</a><br>
+        <a href="#preorder">PREORDER</a><br>
+        <a href="#postorder">POSTORDER</a><br>
+        <a href="#level">LEVEL</a><br>
+
+        <div id="inorder">
+          <h2 style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;"> Inorder traversel</h2>
+          <p style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">In this traversal method, the left subtree is visited first, then the root and later the right sub-tree. We should always remember that every node may represent a subtree itself.
+
+            If a binary tree is traversed in-order, the output will produce sorted key values in an ascending order.</p>
+            <img src="/shri/In-order_Traversal.jpg" width="60%"><br>
+            <p style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">
+              We start from A, and following in-order traversal, we move to its left subtree B.B is also traversed in-order. The process goes on until all the nodes are visited. The output of in-order traversal of this tree will be −<br>
+
+                  D → B → E → A → F → C → G<br>
+            </p>
+            <h3 style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">Algorithm</h3>
+            Until all nodes are traversed −<br>
+
+              Step 1 − Recursively traverse left subtree.<br>
+
+              Step 2 − Visit root node.<br>
+
+              Step 3 − Recursively traverse right subtree<br>
+        </div>
+        <div id="preorder">
+          <h2 style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;"> Preorder traversel</h2>
+          <p>In this traversal method, the root node is visited first, then the left subtree and finally the right subtree.</p>
+            <img src="/shri/Pre-order_Traversal.jpg" width="60%"><br>
+            <p style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">
+              We start from A, and following pre-order traversal, we first visit A itself and then move to its left subtree B. B is also traversed pre-order. The process goes on until all the nodes are visited. The output of pre-order traversal of this tree will be −<br>
+
+              A → B → D → E → C → F → G<br>
+            </p style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">
+            <h3 style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">Algorithm</h3>
+            Until all nodes are traversed −<br>
+            Step 1 − Visit root node.<br>
+
+              Step 2 − Recursively traverse left subtree.<br>
+
+              Step 3 − Recursively traverse right subtree<br>
+        </div>
+        <div id="postorder">
+          <h2 style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;"> Postorder traversel</h2>
+          <p>In this traversal method, the root node is visited last, hence the name. First we traverse the left subtree, then the right subtree and finally the root node..</p>
+            <img src="/shri/Post-order_Traversal.jpg" width="60%"><br>
+            <p>
+              We start from A, and following pre-order traversal, we first visit the left subtree B. B is also traversed post-order. The process goes on until all the nodes are visited. The output of post-order traversal of this tree will be −<br>
+              D → E → B → F → G → C → A<br>
+            </p>
+            <h3 style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">Algorithm</h3>
+            Until all nodes are traversed −<br>
+
+              Step 1 − Recursively traverse left subtree.<br>
+
+              Step 2 − Recursively traverse right subtree<br>
+
+              Step 2 − Visit root node.<br>
+        </div>
+        <div id="level">
+          <h2 style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;"> Level wise traversel</h2>
+          <p style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">The breadth first traversal of a binary tree is also known as the level order traversal of a binary tree in Java.
+
+            For the following binary tree:
+            The level order traversal is: 18 20 30 60 34 45 65 12 50 98 82 31 59 71 41</p>
+            <img src="/shri/level-order-traversal-of-a-binary-tree-in-java.png" width="30%">
+            <h3>Algorithm</h3>
+            <pre>
+              displayLevelorder(tree)  
+              1) Create a queue that is empty. Let's say the queue is que  
+              2) tNode = r // starting from the root  
+              3) Iterate until the tNode is not NULL  
+                  a) display the tNode->val.  
+                  b) enqueue the children of the tNode  
+                    (First the left child and then the right child) into que  
+                  c) A node n is then dequeue from the queue (que) 
+            </pre>
+        </div>

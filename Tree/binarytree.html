@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/index.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni&display=swap" rel="stylesheet"> 
+<link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="test.css">
+
+    <title>BinaryTree</title>
+    <script src="countsort.js"></script>
+  </head>
+  <body style="background:linear-gradient(to right,#ebe8e8,#b6e7cf) ">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top ">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+    
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03"style="background-color: rgb(183, 242, 205);">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="Home.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Sorts.html">Sort</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="stack.html">Stacks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="linkedlist/linkedlist.html">linked list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/graphs/graphs.html">Graphs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="Tree/tree.htmls">Tree</a>
+          </li>
+        </ul>
+        
+      </div>
+    </nav>
+      </div>
+      <div class="outer">
+        <div class="left">
+          <div class="data">
+            <h1 style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">BINARY TREE</h1>
+      <p style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">The Binary tree means that the node can have maximum two children. Here, binary name itself suggests that 'two'; therefore, each node can have either 0, 1 or 2 children.</p><br>
+      <img src="/shri/binarytree.png" width="20%">
+      <img src="/shri/binarytree2.png" width="40%"><br>
+      <h3 style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">Advantages of Binary tree</h3>
+      <p style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">
+          1)Efficient searching: Binary trees are particularly efficient when searching for a specific element, as each node has at most two child nodes, allowing for binary search algorithms to be used. This means that search operations can be performed in O(log n) time complexity.<br><br>
+          2)Ordered traversal: The structure of binary trees enables them to be traversed in a specific order, such as in-order, pre-order, and post-order. This allows for operations to be performed on the nodes in a specific order, such as printing the nodes in sorted order.<br><br>
+          3)Memory efficient: Compared to other tree structures, binary trees are relatively memory-efficient because they only require two child pointers per node. This means that they can be used to store large amounts of data in memory while still maintaining efficient search operations.<br><br>
+          4)Fast insertion and deletion: Binary trees can be used to perform insertions and deletions in O(log n) time complexity. This makes them a good choice for applications that require dynamic data structures, such as database systems.<br><br>
+          5)Easy to implement: Binary trees are relatively easy to implement and understand, making them a popular choice for a wide range of applications.<br><br>
+          6)Useful for sorting: Binary trees can be used to implement efficient sorting algorithms, such as heap sort and binary search tree sort.<br><br>
+      </p>
+      <h3 style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">DisAdvantages of Binary tree</h3>
+      <p style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">
+          1)Limited structure: Binary trees are limited to two child nodes per node, which can limit their usefulness in certain applications. For example, if a tree requires more than two child nodes per node, a different tree structure may be more suitable.<br><br>
+          2)Unbalanced trees: Unbalanced binary trees, where one subtree is significantly larger than the other, can lead to inefficient search operations. This can occur if the tree is not properly balanced or if data is inserted in a non-random order.<br><br>
+          3)Space inefficiency: Binary trees can be space inefficient when compared to other data structures. This is because each node requires two child pointers, which can be a significant amount of memory overhead for large trees.<br><br>
+          4)Slow performance in worst-case scenarios: In the worst-case scenario, a binary tree can become degenerate, meaning that each node has only one child. In this case, search operations can degrade to O(n) time complexity, where n is the number of nodes in the tree.<br><br>
+          5)Complex balancing algorithms: To ensure that binary trees remain balanced, various balancing algorithms can be used, such as AVL trees and red-black trees. These algorithms can be complex to implement and require additional overhead, making them less suitable for some applications.<br><br>
+      </p>
+      <h3 style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">Applications</h3>
+      <p style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">
+          1)Search algorithms: Binary search algorithms use the structure of binary trees to efficiently search for a specific element. The search can be performed in O(log n) time complexity, where n is the number of nodes in the tree.<br><br>
+          2)Sorting algorithms: Binary trees can be used to implement efficient sorting algorithms, such as binary search tree sort and heap sort.<br><br>
+          3)Database systems: Binary trees can be used to store data in a database system, with each node representing a record. This allows for efficient search operations and enables the database system to handle large amounts of data.<br><br>
+          4)File systems: Binary trees can be used to implement file systems, where each node represents a directory or file. This allows for efficient navigation and searching of the file system.<br><br>
+          5)Compression algorithms: Binary trees can be used to implement Huffman coding, a compression algorithm that assigns variable-length codes to characters based on their frequency of occurrence in the input data.<br><br>
+          6)Decision trees: Binary trees can be used to implement decision trees, a type of machine learning algorithm used for classification and regression analysis.<br><br>
+          Game AI: Binary trees can be used to implement game AI, where each node represents a possible move in the game. The AI algorithm can search the tree to find the best possible move.<br><br>
+      </p>
+              </div></div>
+        <div class="right">
+          <div class="calculate">
+            <h3 style="font-family: cursive;margin-top: 4%;margin-left: 3%;margin-right: 3%;">IMPLEMENTATION OF BINARY TREE</h3>
+            <pre>#include <bits/stdc++.h>
+                using namespace std;
+                
+                class Node{
+                    public:
+                        int val;
+                        Node*left=NULL;
+                        Node*right=NULL;
+                    
+                };
+                
+                class bt{
+                    public:
+                    void insert(Node**root,int x){
+                        if(*root==NULL){
+                            Node*ptr=new Node();
+                            ptr->val=x;
+                            *root=ptr;
+                        }
+                        else{
+                            Node*ptr=new Node();
+                            ptr->val=x;
+                            Node*temp=*root;
+                            string st;
+                            while(temp->left!=NULL || temp->right!=NULL){
+                                cout<<"insert to the left or right";
+                                cin>>st;
+                                if(st=="left"){
+                                    temp=temp->left;
+                                }
+                                else{
+                                    temp=temp->right;
+                                }
+                            }
+                            if(st=="left"){
+                                temp->left=ptr;
+                            }
+                            else{
+                                temp->right=ptr;
+                            }
+                        }
+                    }
+                    void inorder(Node*root){
+                        if(root==NULL){
+                            return;
+                        }
+                        inorder(root->left);
+                        cout<<root->val<<" ";
+                        inorder(root->right);
+                    }
+                };
+                int main(){
+                    bt b;
+                    Node*root=NULL;
+                    b.insert(&root,10);
+                    
+                    b.insert(&root,20);
+                    b.insert(&root,30);
+                    b.insert(&root,40);
+                    b.insert(&root,60);
+                    b.insert(&root,80);
+                    b.inorder(root);
+                    return 0;
+                }</pre>
+        <div id="demo1"></div>
+            </div>
+      </div>
+            
+          </div>
+        </div>
+      </div>
+      
+    
+    </body>
+</html>

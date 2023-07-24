@@ -3,7 +3,26 @@
     padding:0;
     
 }
- 
+
+
+h2{
+    font-family: cursive;
+    margin-top: 4%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+h3{
+    font-family: cursive;
+    margin-top: 4%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+p{
+    font-family: cursive;
+    margin-top: 4%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
 .outer{
     
 	display:flex;
@@ -21,7 +40,7 @@
     
 }
 .right{
-    overflow: scroll;
+	overflow: scroll;
     background-color:#b6e7cf;
     border-color: black;
 	width:35vw;

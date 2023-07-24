@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+    
+    <link rel="stylesheet" href="static/index.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni&display=swap" rel="stylesheet"> 
+    <title>Home</title>
+  </head>
+  <body style="background:linear-gradient(to right,#edeaea,#239b56) ">
+    
+      <nav class="navbar navbar-expand-md navbar-light fixed-top ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03" style="background-color: rgb(183, 242, 205);">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="Home.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Sorts.html">Sort</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="stack.html">Stacks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="linkedlist.html">linked list</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/graphs/graphs.html">Graphs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="Tree/tree.html">Tree</a>
+            </li>
+          </ul>
+          
+        </div>
+      </nav>
+      <div style="margin-top: 4%;">
+      <div style="margin-left: 2%;font-size: 1rem;font-family:cursive">
+        <h1>SINGLY LINKED LIST</h1>
+        <p>Linked List can be defined as collection of objects called nodes that are randomly stored in the memory.
+            A node contains two fields i.e. data stored at that particular address and the pointer which contains the address of the next node in the memory.
+            The last node of the list contains pointer to the null.
+        <img src="/static/images/ll1.png" width="50%"><br>
+        <p>Algorithms and codes</p>
+        <a href="#syntax">CREATION</a><br>
+        <a href="#insertion">INSERTION</a><br>
+        <a href="#deletion">DELETION</a><br>
+        <a href="#complexity">COMPLEXITY</a><br>
+        
+
+        <h3>Why linked list</h3>
+        Array contains following limitations:<br>
+
+        1)The size of array must be known in advance before using it in the program.<br>
+        2)Increasing size of the array is a time taking process. It is almost impossible to expand the size of the array at run time.<br>
+        3)All the elements in the array need to be contiguously stored in the memory. 
+        <br>4)Inserting any element in the array needs shifting of all its predecessors.<br><br>
+        Linked list is the data structure which can overcome all the limitations of an array. <br>
+        Using linked list is useful because,<br>
+        
+        1)It allocates the memory dynamically. <br>
+        2)All the nodes of linked list are non-contiguously stored in the memory and linked together with the help of pointers.<br>
+        3)Sizing is no longer a problem since we do not need to define its size at the time of declaration.<br>
+         List grows as per the program's demand and limited to the available memory space.</p>
+         
+
+            
+      </div>
+      <div id="syntax">
+        <h4> Node creation</h4>
+        <pre>struct node   
+            {  
+                int data;   
+                struct node *next;  
+            };  
+            struct node *head, *ptr;   
+            ptr = (struct node *)malloc(sizeof(struct node *)); </pre>
+      </div>
+      <h4>code</h4>
+      <pre>void create(int item)  
+        {  
+            struct node *ptr = (struct node *)malloc(sizeof(struct node *));  
+            if(ptr == NULL)  
+            {  
+                printf("\nOVERFLOW\n");  
+            }  
+            else  
+            {  
+                ptr->data = item;  
+                ptr->next = head;  
+                head = ptr;  
+                printf("\nNode inserted\n");  
+            }  
+              
+        }  </pre>
+      <div id="insertion">
+        <h4>INSERTION</h4>
+        <h4>Algorithm</h4>
+        <pre>Step 1: IF PTR = NULL
+            Write OVERFLOW
+                 Go to Step 7
+                [END OF IF]
+            
+            Step 2: SET NEW_NODE = PTR
+            Step 3: SET PTR = PTR → NEXT
+            Step 4: SET NEW_NODE → DATA = VAL
+            Step 5: SET NEW_NODE → NEXT = HEAD
+            Step 6: SET HEAD = NEW_NODE
+            Step 7: EXIT
+            </pre>
+
+        <h4>code</h4>
+        <pre>void beginsert(int item)  
+            {  
+                struct node *ptr = (struct node *)malloc(sizeof(struct node *));  
+                if(ptr == NULL)  
+                {  
+                    printf("\nOVERFLOW\n");  
+                }  
+                else  
+                {  
+                    ptr->data = item;  
+                    ptr->next = head;  
+                    head = ptr;  
+                    printf("\nNode inserted\n");  
+                }  
+                  
+            }  </pre>
+      </div>
+      <div id="deletion">
+        <h4>DELETION</h4>
+        <h4> Algorithm</h4>
+        <pre>Step 1: IF HEAD = NULL
+            Write UNDERFLOW
+                 Go to Step 5
+                [END OF IF]
+            
+            Step 2: SET PTR = HEAD
+            Step 3: SET HEAD = HEAD -> NEXT
+            Step 4: FREE PTR
+            Step 5: EXIT</pre>
+        <h4>code</h4>
+        <pre>void begdelete()  
+            {  
+                struct node *ptr;  
+                if(head == NULL)  
+                {  
+                    printf("\nList is empty");  
+                }  
+                else   
+                {  
+                    ptr = head;  
+                    head = ptr->next;  
+                    free(ptr);  
+                    printf("\n Node deleted from the begining ...");  
+                }  
+            }  </pre>
+      </div>
+      <div id="complexity">
+        <h4>COMPLEXITY</h4>
+        <p>Best case: O(1)</p>
+        <p>Worst case : O(n)</p>
+      </div>
+    </div>
+    
+    
+      
+   
+      
+      
+
+  
+  
+  </body>
+</html>
